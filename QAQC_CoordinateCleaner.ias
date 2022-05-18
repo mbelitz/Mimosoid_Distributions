@@ -1,0 +1,27 @@
+main_tasks:
+  - text: 'Overall pass or fail?'
+    variable: 'Pass'
+    responses:
+      - text: 'Pass'
+        action: keypress{p ~ Pass}
+      - text: 'Fail'
+        action: keypress{f ~ Fail}
+        jump-to: flagged_points
+      - text: 'Uncertain'
+        action: keypress{u ~ Uncertain}
+
+#		
+# Moving on to flagged_points
+#
+flagged_points:
+  - text: 'Remove flagged points?'
+    variable: 'Remove_flaggedPoints'
+    responses:
+      - text: 'yes'
+        action: keypress{y ~ Yes}
+      - text: 'no'
+        action: keypress{n ~ No}
+      - text: 'keep some flagged points'
+        action: keypress{k ~ keepSomeFlaggedPoints}
+      - text: 'remove nonflagged points'
+        action: keypress{r ~ removeNonFlaggedPoints}
